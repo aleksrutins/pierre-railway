@@ -14,15 +14,15 @@ export const Job =
   } = {}): (() => void) =>
   async () => {
     const railway = "./node_modules/.bin/railway";
-    if (project)
-      await run(`RAILWAY_TOKEN=${token} ${railway} link -p "${project}"`);
-    await run(
-      `RAILWAY_TOKEN=${token} ${railway} up -c -s "${service}" -e "${environment}"`,
-    );
     annotate({
       icon: Icons.App,
       color: "fg",
       label: "Railway Service",
       href: `https://railway.app/project/${project}/service/${service}?environmentId=${environment}`,
     });
+    if (project)
+      await run(`RAILWAY_TOKEN=${token} ${railway} link -p "${project}"`);
+    await run(
+      `RAILWAY_TOKEN=${token} ${railway} up -c -s "${service}" -e "${environment}"`,
+    );
   };
