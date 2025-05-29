@@ -1,0 +1,11 @@
+{
+  "name": "@asr/pierre-railway",
+  "version": "0.1.0",
+  "license": "MIT",
+  "nodeModulesDir": "auto",
+  "exports": "./mod.ts",
+  "imports": {
+    "@railway/cli": "npm:@railway/cli@^4.5.3",
+    "pierre": "npm:pierre@^2.1.16"
+  }
+}
