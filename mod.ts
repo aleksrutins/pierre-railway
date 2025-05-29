@@ -9,7 +9,7 @@ export const Job =
     project?: string;
     service?: string;
     environment?: string;
-  } = {}) =>
+  } = {}): (() => void) =>
   async () => {
     if (project) await run(`railway link -p "${project}"`);
     await run(`railway up -c -s "${service}" -e "${environment}"`);
