@@ -11,8 +11,9 @@ export const Job =
     environment?: string;
   } = {}): (() => void) =>
   async () => {
-    if (project) await run(`railway link -p "${project}"`);
-    await run(`railway up -c -s "${service}" -e "${environment}"`);
+    const railway = "./node_modules/.bin/railway";
+    if (project) await run(`${railway} link -p "${project}"`);
+    await run(`${railway} up -c -s "${service}" -e "${environment}"`);
     annotate({
       icon: Icons.App,
       color: "fg",
