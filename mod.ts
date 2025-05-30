@@ -11,7 +11,7 @@ export const Job =
     service?: string;
     environment?: string;
     token?: string;
-  } = {}): (() => void) =>
+  }): (() => void) =>
   async () => {
     const railway = "./node_modules/.bin/railway";
     annotate({
